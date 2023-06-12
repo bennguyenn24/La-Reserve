@@ -1,7 +1,8 @@
 import './App.css'
 import logo from './assets/components/logo.png'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
 
-function App() {
+export default function App() {
 
   return (
     <>
@@ -16,9 +17,21 @@ function App() {
         Become a member of La Réserve today to receive exclusive offers and great deals!
         </span>
         </div>
-        </div>
         <div className="form">
-          <form action=""></form>
+          <form action="#">
+            <div className="email-input">
+            {/* <FontAwesomeIcon icon={faUser} /> */}
+            <input type="text" id="input" placeholder='Enter Email Address' />
+            </div>
+            <div className="password-input">
+            {/* <FontAwesomeIcon icon={faUser} /> */}
+            <input type="text" id="input" placeholder='Password' />
+            </div>
+            <div className="submit">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
         </div>
    </div>
     </>
