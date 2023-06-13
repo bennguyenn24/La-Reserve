@@ -5,16 +5,22 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 
 const firebaseConfig = {
-  //...
+    apiKey: "AIzaSyCBF8O4OR-mpiVchdYoRSKfcFG33yCmfEk",
+    authDomain: "la-reserve-4917a.firebaseapp.com",
+    projectId: "la-reserve-4917a",
+    storageBucket: "la-reserve-4917a.appspot.com",
+    messagingSenderId: "1075812642770",
+    appId: "1:1075812642770:web:598b0cc6ab44d24bec620b",
+    measurementId: "G-PRES5WF138"
 };
 
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-const [bookDate, setBookDate] = useState('');
-const [bookTime, setBookTime] = useState('');
-const [leaveDate, setLeaveDate] = useState('');
-const [leaveTime, setLeaveTime] = useState('');
-
+const [bookDate, setBookDate] = useState("");
+const [bookTime, setBookTime] = useState("");
+const [leaveDate, setLeaveDate] = useState("");
+const [leaveTime, setLeaveTime] = useState("");
 
 const Hotels = () => {
   return (
@@ -26,38 +32,38 @@ const Hotels = () => {
           <form>
             <div className="inputData">
               <input
-               type="date" 
-               name="book-date"
-               id="book-date"
-               onChange={(e) => setBookDate(e.target.value)}
-            />
+                type="date"
+                name="book-date"
+                id="book-date"
+                onChange={(e) => setBookDate(e.target.value)}
+              />
             </div>
             <div className="inputData">
               <input
-            type="time" 
-            name="book-time" 
-            id="book-time"
-            onChange={(e) => setBookTime(e.target.value)}
-             />
+                type="time"
+                name="book-time"
+                id="book-time"
+                onChange={(e) => setBookTime(e.target.value)}
+              />
             </div>
             <div className="txt">
               Select Date & Time you would like to leave.
             </div>
             <div className="inputData">
               <input
-               type="date" 
-               name="leave-date" 
-               id="leave-date"
-               onChange={(e) => setLeaveDate(e.target.value)}
-                />
+                type="date"
+                name="leave-date"
+                id="leave-date"
+                onChange={(e) => setLeaveDate(e.target.value)}
+              />
             </div>
             <div className="inputData">
-              <input 
-              type="time"
-            name="" 
-            id="leave-time" 
-            onChange={(e) => setLeaveTime(e.target.value)}
-            />
+              <input
+                type="time"
+                name="leave-time"
+                id="leave-time"
+                onChange={(e) => setLeaveTime(e.target.value)}
+              />
             </div>
             <div className="book">
               <button type="submit">Book</button>
