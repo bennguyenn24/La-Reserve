@@ -5,7 +5,8 @@ import "../src/App.css";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
-const SignUpForm = () => {
+const SignUpForm = ({setSignedUp}) => {
+  console.log(setSignedUp)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -32,6 +33,7 @@ const SignUpForm = () => {
 
     // Proceed with form submission logic
     // ...
+    setSignedUp(true);
   };
 
   return (
