@@ -17,7 +17,7 @@ const SignUpForm = ({setSignedUp}) => {
     if (!email.includes('@')) {
       setErrorMessage('Please enter a valid email address.');
       return;
-    }
+    } 
 
     if (password.length < 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       setErrorMessage('Password must be at least 8 characters long and contain a special character.');
