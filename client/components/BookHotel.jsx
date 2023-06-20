@@ -1,5 +1,8 @@
 import React from "react";
 import "./BookHotel.css";
+import DSRhotel from '../assets/DSRhotel.jpg'
+import GCPhotel from '../assets/GCPhotel.jpg'
+import PHThotel from '../assets/PHThotel.jpg'
 
 const BookHotel = () => {
 
@@ -15,7 +18,7 @@ const BookHotel = () => {
                     <div className="card">
                         <div className="hotel1"><h1>The Grand Celestial Palace</h1></div>
                         <div className="hotel-image">
-                            <img src="" alt="hotel1" />
+                            <img src={GCPhotel} alt="hotel1" />
                         </div>
                         <div className="price">Price: $10,000 per night</div>
                         <div className="description">
@@ -28,7 +31,7 @@ const BookHotel = () => {
                     <div className="card">
                     <div className="hotel2"><h1>The Diamond Sands Resort & Spa</h1></div>
                         <div className="hotel-image">
-                            <img src="" alt="hotel2" />
+                            <img src={DSRhotel} alt="hotel2" />
                         </div>
                         <div className="price">Price: $7,500 per night</div>
                         <div className="description">
@@ -41,7 +44,7 @@ const BookHotel = () => {
                     <div className="card">
                     <div className="hotel3"><h1>The Platinum Heights Tower</h1></div>
                         <div className="hotel-image">
-                            <img src="" alt="hotel3" />
+                            <img src={PHThotel} alt="hotel3" />
                         </div>
                         <div className="price">Price: $8,000 per night</div>
                         <div className="description">
