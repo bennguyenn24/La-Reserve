@@ -1,22 +1,9 @@
-const {Client} = require('pg');
-require('dotenv').config()
+require("dotenv").config({path:"./.env"});
 
-const client = new Client({
-    host: process.env.PGHOST,
-    user: process.env.PGUSER,
-    port: process.env.PGPORT,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE
-}) 
+const { Pool } = require("pg");
 
-client.connect();
+const pool = new Pool();
 
-client.query('SELECT * from hotel', (err, res) => {
-    if(!err){
-        console.log(res.rows);
-    } else {
-        console.log(err.message);
-    }
-    client.end;
-})
-
+module.exports = {
+    query: (text, params) => pool.query(text, params),
+};
