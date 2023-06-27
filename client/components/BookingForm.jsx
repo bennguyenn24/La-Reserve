@@ -2,7 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./BookingForm.css";
 
-const BookingForm = () => {
+const BookingForm = ({setBookingComplete}) => {
+    const handleBookingComplete = () => {
+        setBookingComplete(true);
+    };
+
     const [bookDate, setBookDate] = useState("");
     const [bookTime, setBookTime] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
@@ -10,6 +14,7 @@ const BookingForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleBookingComplete();
 
         if (bookDate === "" || leaveDate === "") {
             alert("Please select both book date and leave date.");
