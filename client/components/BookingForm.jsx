@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./BookingForm.css";
 
-const BookingForm = ({setBookingComplete}) => {
+const BookingForm = ({ setBookingComplete }) => {
     const handleBookingComplete = () => {
         setBookingComplete(true);
     };
@@ -14,17 +13,33 @@ const BookingForm = ({setBookingComplete}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleBookingComplete();
 
-        if (bookDate === "" || leaveDate === "") {
-            alert("Please select both book date and leave date.");
+        // Validate form inputs
+        if (!bookDate || !bookTime || !leaveDate || !leaveTime) {
+            alert("Please select all booking details.");
             return;
         }
-        if (bookTime === "" || leaveTime === "") {
-            console.log("Please select both book time and leave time.");
+
+        const currentDate = new Date();
+        const selectedBookDateTime = new Date(`${bookDate} ${bookTime}`);
+        const selectedLeaveDateTime = new Date(`${leaveDate} ${leaveTime}`);
+
+        // Check if booking time is in the past
+        if (selectedBookDateTime < currentDate) {
+            alert("Booking time cannot be in the past.");
             return;
         }
+
+        // Check if booking time is after leaving time
+        if (selectedBookDateTime >= selectedLeaveDateTime) {
+            alert("Booking time must be before leaving time.");
+            return;
+        }
+
+        // Handle successful form submission
+        handleBookingComplete();
     };
+
     return (
         <div className="container">
             <div className="content">
