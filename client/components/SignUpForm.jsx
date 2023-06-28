@@ -6,7 +6,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 const SignUpForm = ({setSignedUp}) => {
-  console.log(setSignedUp)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');

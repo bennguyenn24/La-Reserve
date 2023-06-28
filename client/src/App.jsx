@@ -46,6 +46,7 @@ export default function App() {
                     <Route path="*" element={<NoPage />} />
                 </Routes>
             </BrowserRouter>
+            {/* <BookHotel /> */}
         </div>
     );
 }
