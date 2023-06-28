@@ -1,77 +1,62 @@
-:root {
-    --white: #fff;
-    --bg: #313552;
-    --grey: #ccc;
-    --success-bg: #6bcb77;
-  }
-
-
-.box {
-    background: white;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px 30px;
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.box .content .text{
-    font-weight: 500;
-    font-size: 1.5em;
-    padding: 20px;
+.product-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ;
+  margin: 20px;
 }
 
-.hotel-image{
-width: 100%;
-height: auto;
-max-height: 300px;
-border-radius: 20px;
-object-fit: cover;
+.product-card:hover {
+  transform: translateY(-10px);
 }
 
-.box .content .cards .cards-box {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.product-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
-.card {
-    display: flex;
-    background-color: var(--white);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    margin-bottom: 20px;
+.product-info {
+  padding: 20px;
 }
 
-.card .hotel-image {
-    flex: 0 0 40%;
-    margin-right: 20px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
+.product-title {
+  font-size: 1.2em;
+  margin-bottom: 22px;
+}
 
-  .card .image-container {
-    margin-right: 20px; /* Add margin to the image container */
-  }
-
-  .card .content {
-    flex: 1;
-  }
-  
-
-  .card .text {
-    font-weight: 500;
-    font-size: 1.2em;
-  }
-  
-  .card .price {
-    margin-top: 0;
+.product-price { 
+    color: black;
     margin-bottom: 10px;
-  }
   
-  .card .description {
-    margin-bottom: 20px;
-  }
+}
 
-.box .content .cards .request {
-    text-align: center;
-    margin-top: 20px;
-  }
+.product-description {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.hotel-container {
+background-color: #dbbaba;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+
+.container-title {
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 2.2em;
+  font-weight: bold;
+}
