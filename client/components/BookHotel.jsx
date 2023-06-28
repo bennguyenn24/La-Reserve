@@ -20,8 +20,10 @@ const BookHotel = () => {
                                 <div className="hotel1">
                                     <h1>The Grand Celestial Palace</h1>
                                 </div>
+                                <div className="image-container">
                                 <div className="hotel-image">
                                     <img src={GCPhotel} alt="hotel1" />
+                                </div>
                                 </div>
                                 <div className="price">
                                     Price: $10,000 per night
