@@ -1,4 +1,5 @@
 import React from "react";
+import "./BookHotel.css";
 
 const HotelCard = ({ title, image, price, description, link }) => {
     return (
@@ -8,7 +9,7 @@ const HotelCard = ({ title, image, price, description, link }) => {
             </div>
             <div className="product-info">
                 <h3 className="product-title">{title}</h3>
-                <p className="product-price">${price}</p>
+                <p className="product-price">${price} per night </p>
                 <p className="description">{description}</p>
             </div>
             <a href="#" className="book-now-button">

@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./BookHotel.css";
-import DSRhotel from "../assets/DSRhotel.jpg";
-import GCPhotel from "../assets/GCPhotel.jpg";
-import PHThotel from "../assets/PHThotel.jpg";
 import HotelCard from "./HotelCard";
 import axios from "axios";
 
