@@ -17,7 +17,7 @@ CREATE TABLE bookings (
 	id SERIAL PRIMARY KEY,
 	email VARCHAR(255) NOT NULL,
 	price DECIMAL(12,2),
-	created DATE NOT NULL,
+	created DATE  DEFAULT CURRENT_DATE,
 	book_date DATE NOT NULL,
 	leave_date DATE NOT NULL
 );
