@@ -7,27 +7,27 @@
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
-.wrapper .content .logo img {
+.logo img {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.wrapper .content .offer1 {
+.offer1 {
     margin-top: 18px;
     text-align: center;
 }
 
-.wrapper .content .offer1 span {
+.offer1 span {
     font-size: 1.4em;
     font-weight: 500;
 }
 
-.wrapper .content .form {
+.form {
     margin-top: 30px;
 }
 
-.wrapper .content .form form input {
+input {
     width: 100%;
     padding: 20px 40px;
     border: 1px solid var(--grey);
@@ -36,11 +36,11 @@
     box-sizing: border-box;
 }
 
-.wrapper .content .form form input:focus {
+input:focus {
     border-color: var(--grey);
 }
 
-.wrapper .content .form form button {
+button {
     background: var(--bg);
     background-color: #dbbaba;
     font-weight: 500;
