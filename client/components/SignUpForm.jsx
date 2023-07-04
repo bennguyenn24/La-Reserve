@@ -34,6 +34,10 @@ const SignUpForm = ({setSignedUp}) => {
     setSignedUp(true);
   };
 
+  const proceedAsGuest = () => {
+    setSignedUp(true);
+  }
+
   return (
     <div className="wrapper">
       <div className="content">
@@ -76,7 +80,7 @@ const SignUpForm = ({setSignedUp}) => {
             </div>
             <div className="submit__container">
               <button className="register__button" type="submit">Submit</button>
-              <a className="guest__link" type="button">Continue as Guest</a>
+              <button onClick={proceedAsGuest} className="guest__link" type="button">Continue as Guest</button>
             </div>
           </form>
         </div>
