@@ -47,7 +47,7 @@ const SignUpForm = ({setSignedUp}) => {
         </div>
         {errorMessage && <p>{errorMessage}</p>}
         <div className="form">
-          <form onSubmit={handleSubmit}>
+          <form className="signup-form__container" onSubmit={handleSubmit}>
             <div className="email-input">
               <label htmlFor="email">Email:</label>
               <input
@@ -62,7 +62,7 @@ const SignUpForm = ({setSignedUp}) => {
               />
             </div>
             <div className="password-input">
-            <label htmlFor="password">Password:</label>
+              <label htmlFor="password">Password:</label>
               <input 
                 id="password"
                 name="password"
