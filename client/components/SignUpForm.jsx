@@ -47,10 +47,13 @@ const SignUpForm = ({setSignedUp}) => {
         </div>
         {errorMessage && <p>{errorMessage}</p>}
         <div className="form">
-          <label htmlFor="Sign up Form"></label>
           <form onSubmit={handleSubmit}>
             <div className="email-input">
+              <label htmlFor="email">Email:</label>
               <input
+                id="email"
+                name="email"
+                className="signup__inputs"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +62,11 @@ const SignUpForm = ({setSignedUp}) => {
               />
             </div>
             <div className="password-input">
+            <label htmlFor="password">Password:</label>
               <input 
+                id="password"
+                name="password"
+                className="signup__inputs"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
