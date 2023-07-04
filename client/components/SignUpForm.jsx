@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import "../src/App.css";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
+import "./SignUpForm.css";
 
 const SignUpForm = ({setSignedUp}) => {
   const [email, setEmail] = useState('');
@@ -35,6 +34,10 @@ const SignUpForm = ({setSignedUp}) => {
     setSignedUp(true);
   };
 
+  const proceedAsGuest = () => {
+    setSignedUp(true);
+  }
+
   return (
     <div className="wrapper">
       <div className="content">
@@ -48,10 +51,13 @@ const SignUpForm = ({setSignedUp}) => {
         </div>
         {errorMessage && <p>{errorMessage}</p>}
         <div className="form">
-          <label htmlFor="Sign up Form"></label>
-          <form onSubmit={handleSubmit}>
+          <form className="signup-form__container" onSubmit={handleSubmit}>
             <div className="email-input">
+              <label htmlFor="email">Email:</label>
               <input
+                id="email"
+                name="email"
+                className="signup__inputs"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -60,7 +66,11 @@ const SignUpForm = ({setSignedUp}) => {
               />
             </div>
             <div className="password-input">
+              <label htmlFor="password">Password:</label>
               <input 
+                id="password"
+                name="password"
+                className="signup__inputs"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -68,8 +78,9 @@ const SignUpForm = ({setSignedUp}) => {
                 required
               />
             </div>
-            <div className="submit">
-              <button id="submit-btn" type="submit">Submit</button>
+            <div className="submit__container">
+              <button className="register__button" type="submit">Submit</button>
+              <button onClick={proceedAsGuest} className="guest__link" type="button">Continue as Guest</button>
             </div>
           </form>
         </div>
