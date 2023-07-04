@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import "../src/App.css";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
+import "./SignUpForm.css";
 
 const SignUpForm = ({setSignedUp}) => {
   const [email, setEmail] = useState('');
@@ -68,8 +67,9 @@ const SignUpForm = ({setSignedUp}) => {
                 required
               />
             </div>
-            <div className="submit">
-              <button id="submit-btn" type="submit">Submit</button>
+            <div className="submit__container">
+              <button className="register__button" type="submit">Submit</button>
+              <a className="guest__link" type="button">Continue as Guest</a>
             </div>
           </form>
         </div>

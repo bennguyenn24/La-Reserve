@@ -1,0 +1,17 @@
+.submit__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.guest__link {
+    background-color: rgb(83, 143, 221);
+    color: white;
+    padding-block: 16px;
+    padding-inline: 36px;
+    border-radius: 8px;
+}
+
+.guest__link:hover {
+    background-color: rgb(28, 112, 221);
+    cursor: pointer;
+}
