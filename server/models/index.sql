@@ -7,12 +7,24 @@ DROP TABLE IF EXISTS links;
 CREATE TABLE hotel (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(255) NOT NULL,
-    price decimal(12,2),
-	description VARCHAR (255),
+    price DECIMAL(12,2),
+	description VARCHAR(255),
 	image VARCHAR(255) NOT NULL
 );
 
--- enter new data
+--create table for bookings
+CREATE TABLE bookings (
+	id SERIAL PRIMARY KEY,
+	email VARCHAR(255) NOT NULL,
+	price DECIMAL(12,2),
+	created DATE NOT NULL,
+	book_date DATE NOT NULL,
+	leave_date DATE NOT NULL
+);
+
+
+
+-- enter new hotel data
 INSERT INTO hotel(name, price, description, image)
 VALUES ('The Grand Celestial Palace', 10000, 'Nestled amidst lush mountains, this opulent retreat offers breathtaking views, a private helipad, an infinity pool, and personalized butler service.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/DSRhotel_cek1dz.jpg');
 
