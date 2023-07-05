@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./BookHotel.css";
 import HotelCard from "./HotelCard";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"
 
 const BookHotel = () => {
     const [hotels, setHotels] = useState([]);
-    const handleSubmit = () => {
-        alert("Your request has been submitted");
+    const navigate = useNavigate();
+    const handleBookNow = () => {
+        navigate("/checkout")
     };
 
     useEffect(() => {
@@ -31,7 +33,7 @@ const BookHotel = () => {
                         image={hotel.image}
                         price={hotel.price}
                         description={hotel.description}
-                        link
+                        onButtonClick={handleBookNow}
                     />
                 ))}
             </div>

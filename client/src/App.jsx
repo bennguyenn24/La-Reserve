@@ -49,7 +49,7 @@ export default function App() {
                     <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </BrowserRouter>
-            <BookHotel />
+            {/* <BookHotel /> */}
         </div>
     );
 }
