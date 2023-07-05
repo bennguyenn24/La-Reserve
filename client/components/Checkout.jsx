@@ -1,11 +1,13 @@
 import React from 'react'
 import "./Checkout.css";
 
-const Checkout = () => {
+
+const Checkout = ({handleBookNow}) => {
+
   return (
     <div>
         <div className="checkout-container">
-            <h1 className='container-title'>Check out</h1>
+            <h1 className='container-title'>Checkout</h1>
             <form className="checkout-form">
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -33,7 +35,9 @@ const Checkout = () => {
             <input type="text" id="cvv" className="form-input" />
           </div>
         </div>
-        <button className="checkout-button">Place Order</button>
+        <button className="book-now-button" onClick={handleBookNow}>
+        Book Now
+      </button>
       </form>
         </div>
    
