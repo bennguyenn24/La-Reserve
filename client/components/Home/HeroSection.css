@@ -1,0 +1,31 @@
+.hero__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image__container {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width: 700px) {
+    .hero__container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .image__container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+img {
+    max-width: 97.1%;
+    height: auto;
+    border-radius: 8px;
+}
