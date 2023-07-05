@@ -1,0 +1,17 @@
+.hero__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image__container {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+img {
+    max-width: 97.1%;
+    height: auto;
+}
