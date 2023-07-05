@@ -1,11 +1,10 @@
 import "./App.css";
-import SignUpForm from "../components/SignUpForm";
-import BookingForm from "../components/BookingForm";
-import BookHotel from "../components/BookHotel";
-import NoPage from "../components/NoPage";
+import BookHotel from "./pages/404";
+import NoPage from "./pages/404";
 import Checkout from "../components/Checkout";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 export default function App() {
     const [signedUp, setSignedUp] = useState(false);
@@ -16,40 +15,11 @@ export default function App() {
         <div className="App">
             <BrowserRouter>
                 <Routes>
-                    {!signedUp ? (
-                        <Route
-                            path="/"
-                            element={
-                                <>
-                                    <SignUpForm setSignedUp={setSignedUp} />
-                                </>
-                            }
-                        />
-                    ) : (
-                        <>
-                            <Route
-                                path="/"
-                                element={
-                                    <>
-                                        <BookingForm
-                                            setBookingComplete={
-                                                setBookingComplete
-                                            }
-                                        />
-                                        {bookingComplete ? (
-                                            <Navigate to="/hotel" />
-                                        ) : null}
-                                    </>
-                                }
-                            />
-                            <Route path="/hotel" element={<BookHotel />} />
-                        </>
-                    )}
-                    <Route path="*" element={<NoPage />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="*" element={<NoPage />} />
                 </Routes>
             </BrowserRouter>
-            <BookHotel />
         </div>
     );
 }
