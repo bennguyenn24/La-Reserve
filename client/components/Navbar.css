@@ -1,0 +1,37 @@
+.navbar__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 5px;
+    border-bottom: 1px solid rgb(228, 227, 227);
+    margin-bottom: 10px;
+}
+
+.logo__container {
+    padding-left: 40px;
+    height: auto;
+    width: 100%;
+    max-width: 280px;
+}
+
+.links__container {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    padding-right: 40px;
+}
+
+a {
+    text-decoration: none;
+    padding-block: 6px;
+    padding-inline: 12px;
+    border-radius: 8px;
+    color: rgb(12, 12, 12);
+    font-size: 18px;
+}
+
+.links__container a:hover {
+    text-decoration: none;
+    background-color: rgb(245, 245, 245);
+}

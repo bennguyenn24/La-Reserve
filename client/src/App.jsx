@@ -5,14 +5,15 @@ import Checkout from "../components/Checkout";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "../components/Navbar";
 
 export default function App() {
     const [bookingComplete, setBookingComplete] = useState(false);
-console.log(bookingComplete)
 
     return (
         <div className="App">
             <BrowserRouter>
+                <Navbar />
                 <Routes>
                     <Route
                         path="/"
