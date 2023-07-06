@@ -5,6 +5,8 @@ import Checkout from "../components/Checkout";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "../components/Navbar";
+import MobileNavbar from "../components/MobileNavbar";
 
 export default function App() {
     const [bookingComplete, setBookingComplete] = useState(false);
@@ -12,6 +14,7 @@ export default function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <Navbar />
                 <Routes>
                     <Route
                         path="/"
@@ -23,6 +26,7 @@ export default function App() {
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="*" element={<NoPage />} />
                 </Routes>
+                <MobileNavbar />
             </BrowserRouter>
         </div>
     );
