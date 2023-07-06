@@ -22,6 +22,16 @@
     padding-right: 40px;
 }
 
+@media (max-width: 700px) {
+    .links__container {
+        display: none;
+    }
+
+    .navbar__container {
+        justify-content: center;
+    }
+}
+
 a {
     text-decoration: none;
     padding-block: 6px;
