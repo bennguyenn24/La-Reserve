@@ -15,6 +15,13 @@
     flex: 1;
 }
 
+@media(max-width: 700px) {
+    .container {
+        padding-inline: 0;
+        max-width: 360px;
+    }
+}
+
 .header__h1 {
     font-size: 28px;
     margin-bottom: 0;
