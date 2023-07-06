@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 
 export default function App() {
     const [bookingComplete, setBookingComplete] = useState(false);
-console.log(bookingComplete)
 
     return (
         <div className="App">
@@ -20,9 +19,7 @@ console.log(bookingComplete)
                             <Home setBookingComplete={setBookingComplete} />
                         }
                     />
-                    {bookingComplete && (
-                        <Route path="/hotels" element={<BookHotel />} />
-                    )}
+                    <Route path="/hotels" element={<BookHotel />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="*" element={<NoPage />} />
                 </Routes>
