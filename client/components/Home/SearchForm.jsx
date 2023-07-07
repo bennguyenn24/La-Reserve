@@ -16,7 +16,7 @@ const SearchForm = ({ setBookingComplete }) => {
         e.preventDefault();
 
         // Validate form inputs
-        if (!bookDate || !leaveDate) {
+        if (!bookDate || !leaveDate || !location) {
             alert("Please select all booking details.");
             return;
         }
@@ -40,8 +40,6 @@ const SearchForm = ({ setBookingComplete }) => {
         // Handle successful form submission
         handleBookingComplete();
     };
-
-    console.log(adults, children);
 
     return (
         <div className="container">
