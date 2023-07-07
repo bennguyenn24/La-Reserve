@@ -23,3 +23,11 @@
   font-weight: 500;
   color: rgb(92, 92, 92);
 }
+
+.px-10 {
+  padding-inline: 40px;
+}
+
+.py-2 {
+  padding-block: 8px;
+}
