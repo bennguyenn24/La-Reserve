@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./BookHotel.css";
-import HotelCard from "./HotelCard";
+import HotelCard from "./Home/HotelCard";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 

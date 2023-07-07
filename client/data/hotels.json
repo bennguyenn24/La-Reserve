@@ -1,0 +1,86 @@
+{
+    "data": {
+        "hotels": [
+            {
+                "id": 1,
+                "name": "Hotel A",
+                "price": 150.0,
+                "description": "Luxury hotel with beautiful views",
+                "location": "City X",
+                "image": "https://www.travelandleisure.com/thmb/4w2RgBE_R05BPheSi7OZL8EyvVg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Turtle-Bay-FAMILYBEACHRESORT0223-dd9bc741f7084665a284907b69be0331.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Hotel B",
+                "price": 100.0,
+                "description": "Comfortable hotel near the beach",
+                "location": "City Y",
+                "image": "https://www.travelandleisure.com/thmb/WbHNF0i_b6nuQR9ZrsM_C8UJP0k=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Rosewood-St-Barth-FAMILYBEACHRESORT0223-99c85d0daf7f4095887a2f224975568c.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Hotel C",
+                "price": 80.0,
+                "description": "Cozy hotel in the countryside",
+                "location": "City Z",
+                "image": "https://www.travelandleisure.com/thmb/cBY5nWcdamu8ao65pmeOpZaV3Eo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Four-Seasons-Papagayo-FAMILYBEACHRESORT0223-f06050c64fe84b14a333ae4d7895092c.jpg"
+            },
+            {
+                "id": 4,
+                "name": "Hotel D",
+                "price": 200.0,
+                "description": "Boutique hotel in the heart of the city",
+                "location": "City X",
+                "image": "https://www.travelandleisure.com/thmb/mt16PO5vQN1yXhexiD2xoFgQZZQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Martinhal-Sagres-FAMILYBEACHRESORT0223-6b730235a74945d5a62313595de2ca7e.jpg"
+            },
+            {
+                "id": 5,
+                "name": "Hotel E",
+                "price": 120.0,
+                "description": "Modern hotel with excellent amenities",
+                "location": "City Y",
+                "image": "https://www.travelandleisure.com/thmb/2reN9BJPaxMCwK6khpXkeC6M1aE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Banyan-Tree-Mayakoba-FAMILYBEACHRESORT0223-23e9dc31c1bd4781985eb46b8a84b8be.jpg"
+            },
+            {
+                "id": 6,
+                "name": "Hotel F",
+                "price": 90.0,
+                "description": "Budget-friendly hotel near popular attractions",
+                "location": "City Z",
+                "image": "https://www.travelandleisure.com/thmb/ECvt20U3iRUAaz-nFv1rUzH7qKY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Montage-Laguna-beach-FAMILYBEACHRESORT0223-60b6c7daed1b46d58a6100c90e6603b3.jpg"
+            },
+            {
+                "id": 7,
+                "name": "Hotel G",
+                "price": 175.0,
+                "description": "Spacious rooms with stunning ocean views",
+                "location": "City X",
+                "image": "https://www.travelandleisure.com/thmb/4w2RgBE_R05BPheSi7OZL8EyvVg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Turtle-Bay-FAMILYBEACHRESORT0223-dd9bc741f7084665a284907b69be0331.jpg"
+            },
+            {
+                "id": 8,
+                "name": "Hotel H",
+                "price": 110.0,
+                "description": "Family-friendly hotel with a pool",
+                "location": "City Y",
+                "image": "https://www.travelandleisure.com/thmb/xBnzpB269w7-67uPndx_A5r47q4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Eau-Palm-Beach-FAMILYBEACHRESORT0223-0e8f89e29a2d4a8d9111eed6b1917221.jpg"
+            },
+            {
+                "id": 9,
+                "name": "Hotel I",
+                "price": 95.0,
+                "description": "Rustic hotel surrounded by nature",
+                "location": "City Z",
+                "image": "https://www.travelandleisure.com/thmb/e8z1yriL2dF9LgMCcoV1cPJs7Ls=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Kimpton-Kitalay-FAMILYBEACHRESORT0223-d43c70d6575941cd945435af622b2bc8.jpg"
+            },
+            {
+                "id": 10,
+                "name": "Hotel J",
+                "price": 130.0,
+                "description": "Charming hotel in a historic building",
+                "location": "City X",
+                "image": "https://www.travelandleisure.com/thmb/8X4Roh6A2KLg0DE5BZVYMqB1epY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Oil-Nut-Bay-FAMILYBEACHRESORT0223-5bbcdb7d0c774cf199d3dcd567e8cd16.jpg"
+            }
+        ]
+    }
+}

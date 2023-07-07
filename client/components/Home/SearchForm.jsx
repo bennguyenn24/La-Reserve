@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./BookingForm.css";
+import "./SearchForm.css";
 
-const BookingForm = ({ setBookingComplete }) => {
+const SearchForm = ({ setBookingComplete }) => {
     const handleBookingComplete = () => {
         setBookingComplete(true);
     };
@@ -16,7 +16,7 @@ const BookingForm = ({ setBookingComplete }) => {
         e.preventDefault();
 
         // Validate form inputs
-        if (!bookDate || !leaveDate) {
+        if (!bookDate || !leaveDate || !location) {
             alert("Please select all booking details.");
             return;
         }
@@ -40,8 +40,6 @@ const BookingForm = ({ setBookingComplete }) => {
         // Handle successful form submission
         handleBookingComplete();
     };
-
-    console.log(adults, children)
 
     return (
         <div className="container">
@@ -171,4 +169,4 @@ const BookingForm = ({ setBookingComplete }) => {
     );
 };
 
-export default BookingForm;
+export default SearchForm;
