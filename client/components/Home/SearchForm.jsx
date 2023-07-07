@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import "./SearchForm.css";
 
-const SearchForm = ({ setBookingComplete }) => {
-    const handleBookingComplete = () => {
-        setBookingComplete(true);
-    };
-
+const SearchForm = () => {
     const [location, setLocation] = useState("");
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");

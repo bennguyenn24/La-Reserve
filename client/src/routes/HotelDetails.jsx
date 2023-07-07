@@ -7,9 +7,8 @@ export default function HotelDetails() {
     const { hotelId } = useParams();
 
     return (
-        <main>
-            <Navbar />
-            <MobileNavbar />
-        </main>
+        <section>
+
+        </section>
     );
 }
