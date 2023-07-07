@@ -1,0 +1,62 @@
+.product-card {
+    width: 300px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    margin: 20px;
+    position: relative;
+}
+
+.book-now-button {
+    position: absolute;
+    bottom: 10px; /* Adjust the value as needed */
+    left: 50%; /* Adjust the value as needed */
+    transform: translateX(
+        -50%
+    ); /* Add this line to center the button horizontally */
+    padding-inline: 24px;
+    padding-block: 12px; /* Add padding to the button */
+    background-color: rgb(212, 20, 78);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+}
+
+.book-now-button:hover {
+    background-color: rgb(199, 18, 72);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin-bottom: 22px;
+}
+
+.product-price {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 0.9em;
+    margin-bottom: 0px;
+}

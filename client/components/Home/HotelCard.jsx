@@ -1,11 +1,7 @@
 import React from "react";
-import "./BookHotel.css";
+import "./HotelCard.css";
 
-const HotelCard = ({ title, image, price, description, onButtonClick }) => {
-    const handleBookNow = () => {
-        onButtonClick();
-    };
-
+const HotelCard = ({ title, image, price, description }) => {
     return (
         <div className="product-card">
             <div className="product-image">
@@ -16,7 +12,7 @@ const HotelCard = ({ title, image, price, description, onButtonClick }) => {
                 <p className="product-price">${price} per night </p>
                 <p className="description">{description}</p>
             </div>
-            <button className="book-now-button" onClick={handleBookNow}>
+            <button className="book-now-button">
                 Book Now
             </button>
         </div>

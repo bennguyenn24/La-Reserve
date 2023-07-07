@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ProductSection.css";
-import HotelCard from "../HotelCard";
+import HotelCard from "./HotelCard";
 import { data } from "../../data/hotels.json";
 import "./ProductSection.css";
 
