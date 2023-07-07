@@ -11,6 +11,12 @@
 
 .products__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+}
+
+@media(max-width: 900px) {
+    .products__container {
+        justify-content: center;
+    }
 }

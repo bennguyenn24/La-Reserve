@@ -1,21 +1,20 @@
 import React from "react";
 import "./HotelCard.css";
+import { Link } from "react-router-dom";
 
-const HotelCard = ({ title, image, price, description }) => {
+const HotelCard = ({ id, title, image, price, description, location }) => {
     return (
-        <div className="product-card">
+        <Link to={`hotel/${id}`} className="product-card">
             <div className="product-image">
                 <img src={image} alt={title} />
             </div>
             <div className="product-info">
                 <h3 className="product-title">{title}</h3>
-                <p className="product-price">${price} per night </p>
-                <p className="description">{description}</p>
+                <p className="product-location">{location}</p>
+                <p className="product-description">{description}</p>
+                <p className="product-price">${price} night </p>
             </div>
-            <button className="book-now-button">
-                Book Now
-            </button>
-        </div>
+        </Link>
     );
 };
 

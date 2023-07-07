@@ -32,10 +32,13 @@ export default function ProductSection() {
             <section className="products__container">
                 {hotels.map((hotel) => (
                     <HotelCard
+                        key={hotel.id}
+                        id={hotel.id}
                         title={hotel.name}
                         image={hotel.image}
                         price={hotel.price}
                         description={hotel.description}
+                        location={hotel.location}
                     />
                 ))}
             </section>

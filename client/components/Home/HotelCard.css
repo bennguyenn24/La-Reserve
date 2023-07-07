@@ -11,52 +11,39 @@
     position: relative;
 }
 
-.book-now-button {
-    position: absolute;
-    bottom: 10px; /* Adjust the value as needed */
-    left: 50%; /* Adjust the value as needed */
-    transform: translateX(
-        -50%
-    ); /* Add this line to center the button horizontally */
-    padding-inline: 24px;
-    padding-block: 12px; /* Add padding to the button */
-    background-color: rgb(212, 20, 78);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    border: none;
-}
-
-.book-now-button:hover {
-    background-color: rgb(199, 18, 72);
-    cursor: pointer;
-}
-
 .product-card:hover {
     transform: translateY(-10px);
 }
 
 .product-image img {
     width: 100%;
-    height: 150px;
+    height: 240px;
     object-fit: cover;
 }
 
 .product-info {
-    padding: 20px;
+    padding-inline: 20px;
 }
 
 .product-title {
     font-size: 1.2em;
-    margin-bottom: 22px;
+    margin-bottom: 0;
 }
 
 .product-price {
     color: black;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .product-description {
     font-size: 0.9em;
     margin-bottom: 0px;
+    font-size: 14px;
+}
+
+.product-location {
+    margin-top: 2px;
+    font-size: 14px;
+    color:rgb(66, 66, 66);
 }
