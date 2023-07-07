@@ -12,3 +12,14 @@
 .font-bold {
   font-weight: bold;
 }
+
+.header__h1 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+.header__h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(92, 92, 92);
+}
