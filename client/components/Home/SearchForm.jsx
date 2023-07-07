@@ -38,7 +38,7 @@ const SearchForm = () => {
     };
 
     return (
-        <div className="container">
+        <div className="search-form__container">
             <div className="content">
                 <h1 className="header__h1">Luxury Vacation Resorts</h1>
                 <h2 className="header__h2">
@@ -46,7 +46,7 @@ const SearchForm = () => {
                     Reserve.
                 </h2>
 
-                <form className="form" onSubmit={handleSubmit}>
+                <form className="search-form" onSubmit={handleSubmit}>
                     <div className="input__container">
                         <label htmlFor="location" className="text-xs font-bold">
                             LOCATION
