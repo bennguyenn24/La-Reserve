@@ -1,0 +1,107 @@
+:root {
+    --white: #fff;
+    --bg: #313552;
+    --grey: #ccc;
+    --success-bg: #6bcb77;
+}
+
+.reservation-form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+@media (max-width: 800px) {
+    .reservation-form__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.container {
+    width: 100%;
+    min-width: 500px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 1;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding-inline: 0;
+        max-width: 460px;
+    }
+}
+
+.dates__container,
+.people__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+    width: 93.8%;
+    padding: 8px;
+    gap: 4px;
+    border: 1px solid rgb(201, 199, 199);
+    border-radius: 4px;
+}
+
+.input__container:focus {
+    outline: #313552;
+}
+
+.input__container input,
+select {
+    font-size: 16px;
+    padding-block: 4px;
+    border: none;
+    outline: none;
+}
+
+.book-reservation-btn {
+    width: 100%;
+    background-color: rgb(212, 20, 78);
+    color: white;
+    border: none;
+    padding-block: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.book-reservation-btn:hover {
+    background-color: rgb(199, 18, 72);
+    cursor: pointer;
+}
+
+.form {
+    padding-inline: 40px;
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 8px 8px 8px 8px rgb(179, 179, 179);
+    border-radius: 8px;
+}
+
+.image__container {
+    max-width: 400px;
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 12px 12px rgb(245, 245, 245);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
