@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar.jsx";
 import MobileNavbar from "../../components/MobileNavbar.jsx";
 import { Outlet } from "react-router-dom";
 
-export default function Root({ setBookingComplete }) {
+export default function Root() {
     return (
         <main>
             <Navbar />
