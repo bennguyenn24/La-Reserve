@@ -1,15 +1,13 @@
 import React from "react";
-import HeroSection from "../../components/Home/HeroSection";
-import ProductSection from "../../components/Home/ProductSection";
 import Navbar from "../../components/Navbar.jsx";
 import MobileNavbar from "../../components/MobileNavbar.jsx";
+import { Outlet } from "react-router-dom";
 
-export default function Home({ setBookingComplete }) {
+export default function Root({ setBookingComplete }) {
     return (
         <main>
             <Navbar />
-            <HeroSection setBookingComplete={setBookingComplete} />
-            <ProductSection />
+            <Outlet />
             <MobileNavbar />
         </main>
     );

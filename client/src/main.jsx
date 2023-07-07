@@ -3,19 +3,26 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./routes/root.jsx";
+import Root from "./routes/root.jsx";
 import ErrorPage from "./routes/ErrorPage";
 import HotelDetails from "./routes/HotelDetails";
+import Home from "./routes/Home";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <Root />,
         errorElement: <ErrorPage />,
-    },
-    {
-        path: "hotels/:hotelId",
-        element: <HotelDetails />,
+        children: [
+            {
+                path: "",
+                element: <Home />,
+            },
+            {
+                path: "hotels/:hotelId",
+                element: <HotelDetails />,
+            },
+          ],
     },
 ]);
 
