@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./BookingForm.css";
+import "./SearchForm.css";
 
-const BookingForm = ({ setBookingComplete }) => {
+const SearchForm = ({ setBookingComplete }) => {
     const handleBookingComplete = () => {
         setBookingComplete(true);
     };
@@ -41,7 +41,7 @@ const BookingForm = ({ setBookingComplete }) => {
         handleBookingComplete();
     };
 
-    console.log(adults, children)
+    console.log(adults, children);
 
     return (
         <div className="container">
@@ -171,4 +171,4 @@ const BookingForm = ({ setBookingComplete }) => {
     );
 };
 
-export default BookingForm;
+export default SearchForm;
