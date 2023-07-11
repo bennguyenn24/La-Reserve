@@ -1,6 +1,6 @@
 # La Reserve - Resort Hotel Reservation App
 
-La Reserve is an online booking application that allows users to browse through various luxury hotels and book trips with these hotels around the world. This README file provides an overview of the project, installation instructions, and other relevant information.
+La Reserve is an online booking application that allows users to browse through various luxury hotels and book trips with these hotels around the world.
 
 ## Features
 
