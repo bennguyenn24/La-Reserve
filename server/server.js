@@ -1,6 +1,8 @@
 const express = require("express");
 const db = require("./db/index");
 const app = express();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+
 var cors = require("cors");
 const port = 3000;
 
