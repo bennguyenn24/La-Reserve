@@ -1,65 +1,31 @@
-import React, { useState } from "react";
-import "./SearchForm.css";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import "../../components/Hotels/HotelDetails.css";
+// Get Data
+import { data } from "../../data/hotels.json";
 
-const SearchForm = () => {
-    const [location, setLocation] = useState("");
+export default function HotelDetails() {
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Validate form inputs
-        if (!bookDate || !leaveDate || !location) {
-            alert("Please select all booking details.");
-            return;
-        }
-
-        const currentDate = new Date();
-        const selectedBookDateTime = new Date(`${bookDate}T00:00:00`);
-        const selectedLeaveDateTime = new Date(`${leaveDate}T00:00:00`);
-
-        // Check if booking time is in the past
-        if (selectedBookDateTime < currentDate) {
-            alert("Booking time cannot be in the past.");
-            return;
-        }
-
-        // Check if booking time is after leaving time
-        if (selectedBookDateTime >= selectedLeaveDateTime) {
-            alert("Booking time must be before leaving time.");
-            return;
-        }
-
-        // Handle successful form submission
-        handleBookingComplete();
-    };
+    const hotels = data.hotels;
+    const { hotelId } = useParams();
+    const currentHotel = hotels.filter(
+        (hotel) => hotel.id === Number(hotelId)
+    )[0];
 
     return (
-        <div className="search-form__container">
-            <div className="content">
-                <h1 className="header__h1">Luxury Vacation Resorts</h1>
-                <h2 className="header__h2">
-                    Book elegant vacation resorts, hotels, and more on La
-                    Reserve.
-                </h2>
-
-                <form className="search-form" onSubmit={handleSubmit}>
-                    <div className="input__container">
-                        <label htmlFor="location" className="text-xs font-bold">
-                            LOCATION
-                        </label>
-                        <input
-                            onChange={(e) => setLocation(e.target.value)}
-                            id="location"
-                            name="location"
-                            type="text"
-                            value={location}
-                            placeholder="Anywhere"
-                        />
-                    </div>
+        <section className="px-10 py-2">
+            <section className="reservation-form__container">
+                <div className="image__container">
+                    <img src={currentHotel.image} alt={currentHotel.name} />
+                </div>
+                <form className="form">
+                    <h1 className="header__h1">{currentHotel.name}</h1>
+                    <h2 className="header__h2">{currentHotel.location}</h2>
+                    <h3>${currentHotel.price}</h3>
                     <div className="dates__container">
                         <div className="input__container">
                             <label
@@ -74,6 +40,7 @@ const SearchForm = () => {
                                 min={new Date().toISOString().split("T")[0]}
                                 id="book-date"
                                 onChange={(e) => setBookDate(e.target.value)}
+                                value={bookDate}
                             />
                         </div>
                         <div className="input__container">
@@ -89,6 +56,7 @@ const SearchForm = () => {
                                 min={bookDate}
                                 id="leave-date"
                                 onChange={(e) => setLeaveDate(e.target.value)}
+                                value={leaveDate}
                             />
                         </div>
                     </div>
@@ -155,14 +123,11 @@ const SearchForm = () => {
                         id="book-reservation-btn"
                         className="book-reservation-btn"
                         type="submit"
-                        onSubmit={handleSubmit}
                     >
-                        Search
+                        Reserve
                     </button>
                 </form>
-            </div>
-        </div>
+            </section>
+        </section>
     );
-};
-
-export default SearchForm;
+}

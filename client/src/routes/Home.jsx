@@ -2,11 +2,11 @@ import React from "react";
 import HeroSection from "../../components/Home/HeroSection";
 import ProductSection from "../../components/Home/ProductSection";
 
-export default function Home({ setBookingComplete }) {
+export default function Home() {
     return (
-        <main>
-            <HeroSection setBookingComplete={setBookingComplete} />
+        <div>
+            <HeroSection/>
             <ProductSection />
-        </main>
+        </div>
     );
 }
