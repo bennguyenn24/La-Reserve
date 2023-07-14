@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { loadStripe } from '@stripe/stripe-js';
+import { useNavigation } from "react-router-dom";
 import "../../components/Hotels/HotelDetails.css";
 // Get Data
 import { data } from "../../data/hotels.json";
+import axios from "axios";
+import { redirect } from "react-router-dom";
 
 export default function HotelDetails() {
     const [bookDate, setBookDate] = useState("");
@@ -10,11 +14,20 @@ export default function HotelDetails() {
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
 
+    const navigate = useNavigate();
+
     const hotels = data.hotels;
     const { hotelId } = useParams();
     const currentHotel = hotels.filter(
         (hotel) => hotel.id === Number(hotelId)
     )[0];
+
+    const handleCheckout = async () => {
+        const res = await axios.post("http://localhost:3000/create-checkout-session")
+        if (res.status === 200) {
+            console.log(res.data)
+        }
+    }
 
     return (
         <section className="px-10 py-2">
@@ -22,7 +35,7 @@ export default function HotelDetails() {
                 <div className="image__container">
                     <img src={currentHotel.image} alt={currentHotel.name} />
                 </div>
-                <form className="form">
+                <form className="form" action="http://localhost:3000/create-checkout-session" method="POST">
                     <h1 className="header__h1">{currentHotel.name}</h1>
                     <h2 className="header__h2">{currentHotel.location}</h2>
                     <h3>${currentHotel.price}</h3>
@@ -123,6 +136,7 @@ export default function HotelDetails() {
                         id="book-reservation-btn"
                         className="book-reservation-btn"
                         type="submit"
+                        
                     >
                         Reserve
                     </button>

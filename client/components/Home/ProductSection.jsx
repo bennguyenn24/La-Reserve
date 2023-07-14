@@ -31,7 +31,6 @@ export default function ProductSection() {
 
             <section className="products__container">
                 {hotels.map((hotel) => (
-                   <div key={hotel.id} className="product__card">
                      <HotelCard
                         key={hotel.id}
                         id={hotel.id}
@@ -41,8 +40,6 @@ export default function ProductSection() {
                         description={hotel.description}
                         location={hotel.location}
                     />
-                    <button className="product__button">Add to Cart</button>
-                    </div>
                 ))}
             </section>
         </section>
