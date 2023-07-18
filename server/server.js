@@ -33,7 +33,6 @@ app.use("/hotels", require("./routes/hotelRoutes"));
 
 // Stripe
 app.post('/create-checkout-session', async (req, res) => {
-    console.log("hit")
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
