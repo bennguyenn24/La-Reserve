@@ -28,19 +28,23 @@ ADD COLUMN price_id VARCHAR(255);
 
 -- Updating every hotel to have a price_id 
 UPDATE hotel 
-SET price_id = 'price_1NV0NFCA7YJyiVj9Et8l5LlX'
-where name = 'The Grand Celestial Palace';
+SET price_id = 'price_1NUzylCA7YJyiVj9ZDdlfLYz'
+where name = 'Hotel C';
 
+-- deleting duplicate orders 
+
+DELETE FROM hotel
+WHERE name = 'The Platinum Heights Tower';
 
 -- enter new hotel data
 INSERT INTO hotel(name, price, description, image, price_id)
-VALUES ('The Grand Celestial Palace', 10000, 'Nestled amidst lush mountains, this opulent retreat offers breathtaking views, a private helipad, an infinity pool, and personalized butler service.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/DSRhotel_cek1dz.jpg', 'price_1NV0NFCA7YJyiVj9Et8l5LlX');
+VALUES ('The Grand Celestial Palace', 10000, 'Nestled amidst lush mountains, this opulent retreat offers breathtaking views, a private helipad, an infinity pool, and personalized butler service.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/DSRhotel_cek1dz.jpg', 'price_1NV0KeCA7YJyiVj9ZETP0Sim');
 
-INSERT INTO hotel(name, price, description, image)
-VALUES ('The Diamond Sands Resort & Spa', 7500, 'Indulge in the ultimate beachfront experience at this lavish resort, boasting private cabanas, a world-class spa, gourmet dining, and a private yacht for exploration.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/GCPhotel_kngqkf.jpg');
+INSERT INTO hotel(name, price, description, image, price_id)
+VALUES ('The Diamond Sands Resort & Spa', 7500, 'Indulge in the ultimate beachfront experience at this lavish resort, boasting private cabanas, a world-class spa, gourmet dining, and a private yacht for exploration.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/GCPhotel_kngqkf.jpg', 'price_1NV0L9CA7YJyiVj9IEo9zF3B');
 
-INSERT INTO hotel(name, price, description, image)
-VALUES ('The Platinum Heights Tower', 8000, 'Ascend to the epitome of urban elegance in this sleek skyscraper. Enjoy panoramic city views, a penthouse suite with a personal chef, a rooftop infinity pool, and exclusive access to a private club.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/PHThotel_cj1nmp.jpg');
+INSERT INTO hotel(name, price, description, image, price_id)
+VALUES ('The Platinum Heights Tower', 8000, 'Ascend to the epitome of urban elegance in this sleek skyscraper. Enjoy panoramic city views, a penthouse suite with a personal chef, a rooftop infinity pool, and exclusive access to a private club.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/PHThotel_cj1nmp.jpg', 'price_1NV0LiCA7YJyiVj92D2kZNIC');
 
 INSERT INTO hotel(name, price, description, image)
 VALUES ('Hotel A', 150, 'Luxury hotel with beautiful views', 'https://www.travelandleisure.com/thmb/4w2RgBE_R05BPheSi7OZL8EyvVg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-Turtle-Bay-FAMILYBEACHRESORT0223-dd9bc741f7084665a284907b69be0331.jpg');
