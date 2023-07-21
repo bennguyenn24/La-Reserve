@@ -22,11 +22,19 @@ CREATE TABLE bookings (
 	leave_date DATE NOT NULL
 );
 
+-- Adding new column to table for hotel;
+ALTER TABLE hotel
+ADD COLUMN price_id VARCHAR(255);
+
+-- Updating every hotel to have a price_id 
+UPDATE hotel 
+SET price_id = 'price_1NV0NFCA7YJyiVj9Et8l5LlX'
+where name = 'The Grand Celestial Palace';
 
 
 -- enter new hotel data
-INSERT INTO hotel(name, price, description, image)
-VALUES ('The Grand Celestial Palace', 10000, 'Nestled amidst lush mountains, this opulent retreat offers breathtaking views, a private helipad, an infinity pool, and personalized butler service.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/DSRhotel_cek1dz.jpg');
+INSERT INTO hotel(name, price, description, image, price_id)
+VALUES ('The Grand Celestial Palace', 10000, 'Nestled amidst lush mountains, this opulent retreat offers breathtaking views, a private helipad, an infinity pool, and personalized butler service.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/DSRhotel_cek1dz.jpg', 'price_1NV0NFCA7YJyiVj9Et8l5LlX');
 
 INSERT INTO hotel(name, price, description, image)
 VALUES ('The Diamond Sands Resort & Spa', 7500, 'Indulge in the ultimate beachfront experience at this lavish resort, boasting private cabanas, a world-class spa, gourmet dining, and a private yacht for exploration.', 'https://res.cloudinary.com/dlahkgxj7/image/upload/v1687994392/GCPhotel_kngqkf.jpg');
