@@ -6,19 +6,19 @@ import { data } from "../../data/hotels.json";
 import "./ProductSection.css";
 
 export default function ProductSection() {
-    const [hotels, setHotels] = useState(data.hotels);
-    console.log(hotels);
-    // useEffect(() => {
-    //     async function getHotelData() {
-    //         try {
-    //             const res = await axios.get("http://localhost:3000/hotels");
-    //             setHotels(res.data.data);
-    //         } catch (err) {
-    //             console.error(err);
-    //         }
-    //     }
-    //     getHotelData();
-    // }, []);
+    const [hotels, setHotels] = useState([]);
+
+    useEffect(() => {
+        async function getHotelData() {
+            try {
+                const res = await axios.get("http://localhost:3000/hotels");
+                setHotels(res.data.data);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        getHotelData();
+    }, []);
 
     return (
         <section className="products-section">
