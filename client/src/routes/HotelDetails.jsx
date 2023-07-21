@@ -1,33 +1,35 @@
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { loadStripe } from '@stripe/stripe-js';
-import { useNavigation } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 import "../../components/Hotels/HotelDetails.css";
-// Get Data
-import { data } from "../../data/hotels.json";
 import axios from "axios";
-import { redirect } from "react-router-dom";
+import { HotelsContext } from "../../context/HotelsContext";
 
 export default function HotelDetails() {
+    const hotels = useContext(HotelsContext);
+    console.log(hotels)
+
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
 
-    const navigate = useNavigate();
-
-    const hotels = data.hotels;
     const { hotelId } = useParams();
     const currentHotel = hotels.filter(
         (hotel) => hotel.id === Number(hotelId)
     )[0];
 
     const handleCheckout = async () => {
-        const res = await axios.post("http://localhost:3000/create-checkout-session")
+        const res = await axios.post(
+            "http://localhost:3000/create-checkout-session",
+            { hotelId }
+        );
+
         if (res.status === 200) {
             console.log(res.data)
+            const redirectUrl = res.data.session.url;
+            window.location.replace(redirectUrl);
         }
-    }
+    };
 
     return (
         <section className="px-10 py-2">
@@ -35,7 +37,11 @@ export default function HotelDetails() {
                 <div className="image__container">
                     <img src={currentHotel.image} alt={currentHotel.name} />
                 </div>
-                <form className="form" action="http://localhost:3000/create-checkout-session" method="POST">
+                <form
+                // className="form"
+                // action="http://localhost:3000/create-checkout-session"
+                // method="POST"
+                >
                     <h1 className="header__h1">{currentHotel.name}</h1>
                     <h2 className="header__h2">{currentHotel.location}</h2>
                     <h3>${currentHotel.price}</h3>
@@ -133,10 +139,10 @@ export default function HotelDetails() {
                     </div>
 
                     <button
+                        onClick={handleCheckout}
                         id="book-reservation-btn"
                         className="book-reservation-btn"
-                        type="submit"
-                        
+                        type="button"
                     >
                         Reserve
                     </button>

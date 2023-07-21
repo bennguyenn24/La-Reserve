@@ -1,24 +1,11 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useContext } from "react";
 import "./ProductSection.css";
 import HotelCard from "./HotelCard";
-import { data } from "../../data/hotels.json";
 import "./ProductSection.css";
+import { HotelsContext } from "../../context/HotelsContext";
 
 export default function ProductSection() {
-    const [hotels, setHotels] = useState([]);
-
-    useEffect(() => {
-        async function getHotelData() {
-            try {
-                const res = await axios.get("http://localhost:3000/hotels");
-                setHotels(res.data.data);
-            } catch (err) {
-                console.error(err);
-            }
-        }
-        getHotelData();
-    }, []);
+    const hotels = useContext(HotelsContext);
 
     return (
         <section className="products-section">
@@ -31,7 +18,7 @@ export default function ProductSection() {
 
             <section className="products__container">
                 {hotels.map((hotel) => (
-                     <HotelCard
+                    <HotelCard
                         key={hotel.id}
                         id={hotel.id}
                         title={hotel.name}
