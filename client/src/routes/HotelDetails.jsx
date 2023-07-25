@@ -37,11 +37,7 @@ export default function HotelDetails() {
                 <div className="image__container">
                     <img src={currentHotel.image} alt={currentHotel.name} />
                 </div>
-                <form
-                // className="form"
-                // action="http://localhost:3000/create-checkout-session"
-                // method="POST"
-                >
+                <form>
                     <h1 className="header__h1">{currentHotel.name}</h1>
                     <h2 className="header__h2">{currentHotel.location}</h2>
                     <h3>${currentHotel.price}</h3>
