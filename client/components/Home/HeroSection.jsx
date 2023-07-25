@@ -7,7 +7,7 @@ export default function HeroSection() {
         <section className="hero__container">
             <SearchForm/>
             <div className="image__container">
-                <img src="../../assets/HERO.jpg" />
+                <img src="../../assets/HERO.jpg" alt="Vacation resort" />
             </div>
         </section>
     );
