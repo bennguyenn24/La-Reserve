@@ -26,10 +26,19 @@ CREATE TABLE bookings (
 ALTER TABLE hotel
 ADD COLUMN price_id VARCHAR(255);
 
+ALTER TABLE hotel
+ADD COLUMN location VARCHAR(255);
+
 -- Updating every hotel to have a price_id 
 UPDATE hotel 
 SET price_id = 'price_1NUzylCA7YJyiVj9ZDdlfLYz'
 where name = 'Hotel C';
+
+-- updating every hotel to have a location
+
+UPDATE hotel
+SET location = 'Prague, Czech Republic'
+WHERE name = 'Hotel J';
 
 -- deleting duplicate orders 
 
