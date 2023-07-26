@@ -7,6 +7,9 @@ import Root from "./routes/root.jsx";
 import ErrorPage from "./routes/ErrorPage";
 import HotelDetails from "./routes/HotelDetails";
 import Home from "./routes/Home";
+import CheckoutCancel from "../components/Home/CheckoutCancel";
+import CheckoutSuccess from "../components/Home/CheckoutSuccess";
+import SearchResults from "../components/Search/SearchResults";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,18 @@ const router = createBrowserRouter([
             {
                 path: "hotels/:hotelId",
                 element: <HotelDetails />,
+            },
+            {
+                path: "success/:bookingId",
+                element: <CheckoutSuccess />,
+            },
+            {
+                path: "cancel/:bookingId",
+                element: <CheckoutCancel />,
+            },
+            {
+                path: "searchresults/:location",
+                element: <SearchResults />,
             },
           ],
     },
