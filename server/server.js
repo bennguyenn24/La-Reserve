@@ -5,12 +5,20 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 console.log(process.env.STRIPE_SECRET_KEY);
 
-const YOUR_DOMAIN = "http://localhost:3000";
-
+const whitelist = ["la-reserve.vercel.app", "http://localhost:3000"];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+};
 var cors = require("cors");
 const port = 3000;
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -53,11 +61,11 @@ app.post("/create-checkout-session", async (req, res) => {
                     },
                 ],
                 mode: "payment",
-                success_url: `${YOUR_DOMAIN}?success=true`,
-                cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+                success_url: `${process.env.CURRENT_DOMAIN}?success=true`,
+                cancel_url: `${process.env.CURRENT_DOMAIN}?canceled=true`,
             });
 
-            res.json({session});
+            res.json({ session });
         } else {
             res.status(404).json({
                 success: false,
