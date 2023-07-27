@@ -5,7 +5,7 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 console.log(process.env.STRIPE_SECRET_KEY);
 
-const whitelist = ["la-reserve.vercel.app", "http://localhost:3000"];
+const whitelist = ["https://la-reserve.vercel.app", "http://localhost:3000"];
 const corsOptions = {
     origin: function (origin, callback) {
         if (whitelist.indexOf(origin) !== -1) {
