@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import "./SearchForm.css";
 
 const SearchForm = () => {
+    const navigate = useNavigate();
+
     const [location, setLocation] = useState("");
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
@@ -35,6 +38,8 @@ const SearchForm = () => {
 
         // Handle successful form submission
         handleBookingComplete();
+
+        navigate(`/searchresults/${encodeURIComponent(location)}`);
     };
 
     return (
