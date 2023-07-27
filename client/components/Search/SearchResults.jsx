@@ -1,16 +1,18 @@
 import React from "react";
+import { useLocation, useParams } from "react-router-dom";
 
-export default function SearchResults({ location }) {
-    const { searchLocation, bookDate, leaveDate, adults, children } =
-        location.state;
-    return (
-        <div>
-            <h1>Search Results</h1>
-            <p>Location: {searchLocation}</p>
-            <p>Check-in Date: {bookDate}</p>
-            <p>Check-out Date: {leaveDate}</p>
-            <p>Number of Adults: {adults}</p>
-            <p>Number of Children: {children}</p>
-        </div>
-    );
-}
+const SearchResults = () => {
+  const { location } = useParams(); 
+  const query = new URLSearchParams(useLocation().search); 
+
+
+  return (
+    <div>
+      <h1>Search Results</h1>
+      <p>Location: {decodeURIComponent(location)}</p>
+      {/* Display search results based on the location and query parameters */}
+    </div>
+  );
+};
+
+export default SearchResults;
