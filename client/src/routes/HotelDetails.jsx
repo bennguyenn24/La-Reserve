@@ -19,8 +19,8 @@ export default function HotelDetails() {
     )[0];
 
     const handleCheckout = async () => {
-        const res = await axios.post(
-            "http://localhost:3000/create-checkout-session",
+        const res = await axios.post(+
+            "https://la-reserve-server.onrender.com/create-checkout-session",
             { hotelId }
         );
 
@@ -37,7 +37,7 @@ export default function HotelDetails() {
                 <div className="image__container">
                     <img src={currentHotel.image} alt={currentHotel.name} />
                 </div>
-                <form>
+                 <form>
                     <h1 className="header__h1">{currentHotel.name}</h1>
                     <h2 className="header__h2">{currentHotel.location}</h2>
                     <h3>${currentHotel.price}</h3>
