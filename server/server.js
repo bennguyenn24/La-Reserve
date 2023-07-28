@@ -3,7 +3,6 @@ const db = require("./db/index");
 const app = express();
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-console.log(process.env.STRIPE_SECRET_KEY);
 
 const whitelist = ["https://la-reserve.vercel.app", "http://localhost:3000"];
 const corsOptions = {
@@ -35,13 +34,9 @@ app.post("/bookings", async (req, res) => {
 
     res.json({ success: true, data: rows[0] });
 });
+
 // Routes
 app.use("/hotels", require("./routes/hotelRoutes"));
-
-// Stripe
-// Need to pull and fetch data from the selected hotel
-// create checkout session
-// fetch hotel information
 
 app.post("/create-checkout-session", async (req, res) => {
     try {
