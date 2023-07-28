@@ -14,7 +14,7 @@ const BookHotel = () => {
     useEffect(() => {
         async function getHotelData() {
             try {
-                const res = await axios.get("http://localhost:3000/hotels");
+                const res = await axios.get("https://la-reserve-server.onrender.com/hotels");
                 setHotels(res.data.data);
             } catch (err) {
                 console.error(err);
