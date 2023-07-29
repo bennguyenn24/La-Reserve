@@ -19,13 +19,12 @@ export default function HotelDetails() {
     )[0];
 
     const handleCheckout = async () => {
-        const res = await axios.post(+
+        const res = await axios.post(
             "https://la-reserve-server.onrender.com/create-checkout-session",
             { hotelId }
         );
 
         if (res.status === 200) {
-            console.log(res.data)
             const redirectUrl = res.data.session.url;
             window.location.replace(redirectUrl);
         }
