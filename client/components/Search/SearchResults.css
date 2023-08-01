@@ -1,0 +1,35 @@
+.no-hotel-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+button {
+    background-color: rgb(212, 20, 78);
+    color: white;
+    border: none;
+    padding-block: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: rgb(219, 96, 133);
+}
+
+/* Additional styles for the button */
+button:focus {
+  outline: none; /* Remove the focus outline */
+}
