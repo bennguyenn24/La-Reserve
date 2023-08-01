@@ -10,6 +10,13 @@ const SearchForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        
+    if (!location.trim()) {
+        // Show a message or perform any action for invalid form submission
+        alert("Please fill out the location field.");
+        return;
+      }
+
         navigate(`/search/${encodeURIComponent(location)}`);
     };
 

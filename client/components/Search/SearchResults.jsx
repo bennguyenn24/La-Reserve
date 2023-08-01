@@ -14,7 +14,6 @@ const SearchResults = () => {
 
     const navigate = useNavigate();
 
-
     const handleGoBack = () => {
       navigate("/");
     }
@@ -35,6 +34,7 @@ const SearchResults = () => {
                         {hotelsFilteredByLocation.map((hotel) => (
                             <HotelCard
                                 key={hotel.id}
+                                id={hotel.id}
                                 title={hotel.title}
                                 location={hotel.location}
                                 image={hotel.image}
