@@ -6,7 +6,7 @@ import { HotelsContext } from "../../context/HotelsContext";
 
 export default function HotelDetails() {
     const hotels = useContext(HotelsContext);
-    console.log(hotels)
+    console.log(hotels);
 
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
@@ -19,9 +19,10 @@ export default function HotelDetails() {
     )[0];
 
     const handleCheckout = async () => {
+        const amountOfDays = findDaysDifference(leaveDate, bookDate)
         const res = await axios.post(
             "https://la-reserve-server.onrender.com/create-checkout-session",
-            { hotelId }
+            { hotelId, amountOfDays }
         );
 
         if (res.status === 200) {
@@ -30,13 +31,29 @@ export default function HotelDetails() {
         }
     };
 
+    const findDaysDifference = (leaveDateInput, bookDateInput) => {
+        // Step 1: Parse date strings into Date objects
+        const leaveDate = new Date(leaveDateInput);
+        const bookDate = new Date(bookDateInput);
+
+        // Step 2: Calculate the time difference in milliseconds
+        const timeDifferenceInMilliseconds = leaveDate - bookDate;
+
+        // Step 3: Convert to the desired unit (optional)
+        // For example, to get the difference in days, divide by the number of milliseconds in a day
+        const millisecondsInADay = 1000 * 60 * 60 * 24;
+        const timeDifferenceInDays =
+            timeDifferenceInMilliseconds / millisecondsInADay;
+        return timeDifferenceInDays;
+    };
+
     return (
         <section className="px-10 py-2">
             <section className="reservation-form__container">
                 <div className="image__container">
                     <img src={currentHotel.image} alt={currentHotel.name} />
                 </div>
-                 <form>
+                <form>
                     <h1 className="header__h1">{currentHotel.name}</h1>
                     <h2 className="header__h2">{currentHotel.location}</h2>
                     <h3>${currentHotel.price}</h3>
