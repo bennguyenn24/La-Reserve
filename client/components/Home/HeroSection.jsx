@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchForm from "./SearchForm";
+import Heropic from "../../assets/HERO.jpg"
 import "./HeroSection.css";
 
 export default function HeroSection() {
@@ -19,7 +20,7 @@ export default function HeroSection() {
         <SearchForm onSearch={handleSearch} />
       )}
             <div className="image__container">
-                <img src="../../assets/HERO.jpg" alt="Vacation resort" />
+                <img src={Heropic} alt="Vacation resort" />
             </div>
         </section>
     );
