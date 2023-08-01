@@ -40,7 +40,7 @@ app.use("/hotels", require("./routes/hotelRoutes"));
 
 app.post("/create-checkout-session", async (req, res) => {
     try {
-        const { hotelId } = req.body;
+        const { hotelId, amountOfDays } = req.body;
 
         const { rows } = await db.query(
             "SELECT name, price, description, image, price_id FROM hotel WHERE id = $1",
@@ -52,7 +52,7 @@ app.post("/create-checkout-session", async (req, res) => {
                 line_items: [
                     {
                         price: rows[0].price_id,
-                        quantity: 1,
+                        quantity: amountOfDays,
                     },
                 ],
                 mode: "payment",
