@@ -1,10 +1,3 @@
-:root {
-    --white: #fff;
-    --bg: #313552;
-    --grey: #ccc;
-    --success-bg: #6bcb77;
-}
-
 @media(max-width: 700px) {
     .search-form__container {
         padding-top: 10px;
