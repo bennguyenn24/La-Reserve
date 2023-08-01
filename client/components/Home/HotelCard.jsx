@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HotelCard = ({ id, title, image, price, description, location }) => {
     return (
-        <Link to={`hotels/${id}`} className="product-card">
+        <Link to={`/hotels/${id}`} className="product-card">
             <div className="product-image">
                 <img src={image} alt={title} />
             </div>
