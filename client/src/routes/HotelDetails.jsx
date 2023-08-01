@@ -19,17 +19,47 @@ export default function HotelDetails() {
     )[0];
 
     const handleCheckout = async () => {
-        const amountOfDays = findDaysDifference(leaveDate, bookDate)
-        const res = await axios.post(
-            "https://la-reserve-server.onrender.com/create-checkout-session",
-            { hotelId, amountOfDays }
-        );
-
-        if (res.status === 200) {
-            const redirectUrl = res.data.session.url;
-            window.location.replace(redirectUrl);
+        if (validateForm()) {
+            const amountOfDays = findDaysDifference(leaveDate, bookDate)
+            const res = await axios.post(
+                "https://la-reserve-server.onrender.com/create-checkout-session",
+                { hotelId, amountOfDays }
+            );
+    
+            if (res.status === 200) {
+                const redirectUrl = res.data.session.url;
+                window.location.replace(redirectUrl);
+            }
+        } else {
+            console.error("All form inputs should be filled out.")
         }
     };
+
+    const validateForm = () => {
+        // Validate form inputs
+        if (!bookDate || !leaveDate || !location) {
+            alert("Please select all booking details.");
+            return false;
+        }
+
+        const currentDate = new Date();
+        const selectedBookDateTime = new Date(`${bookDate}T00:00:00`);
+        const selectedLeaveDateTime = new Date(`${leaveDate}T00:00:00`);
+
+        // Check if booking time is in the past
+        if (selectedBookDateTime < currentDate) {
+            alert("Booking time cannot be in the past.");
+            return false;
+        }
+
+        // Check if booking time is after leaving time
+        if (selectedBookDateTime >= selectedLeaveDateTime) {
+            alert("Booking time must be before leaving time.");
+            return false;
+        }
+
+        return true;
+    }
 
     const findDaysDifference = (leaveDateInput, bookDateInput) => {
         // Step 1: Parse date strings into Date objects
