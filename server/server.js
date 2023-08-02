@@ -9,24 +9,22 @@ const whitelist = [
     "http://localhost:5173",
     "https://la-reserve-server.onrender.com",
 ];
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-};
-var cors = require("cors");
+
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.indexOf(origin) !== -1) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error("Not allowed by CORS"));
+//         }
+//     },
+// };
+
+const cors = require("cors");
 const port = 3000;
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("Hello Mate");
-});
 
 // Handle Bookings
 app.post("/bookings", async (req, res) => {
@@ -60,8 +58,8 @@ app.post("/create-checkout-session", async (req, res) => {
                     },
                 ],
                 mode: "payment",
-                success_url: `${process.env.CURRENT_DOMAIN}/order/success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${process.env.CURRENT_DOMAIN}/order/canceled=true`,
+                success_url: `${process.env.CURRENT_DOMAIN}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${process.env.CURRENT_DOMAIN}/checkout/canceled=true`,
             });
 
             res.json({ session });
@@ -77,17 +75,18 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-app.get("/order/success", async (req, res) => {
-    console.log("hit");
-    console.log(req.query.session_id);
+app.get("/order", async (req, res) => {
     const session = await stripe.checkout.sessions.retrieve(
         req.query.session_id
     );
-    const customer = await stripe.customers.retrieve(session.customer);
 
-    res.send(
-        `<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`
-    );
+    const sessionInfo = {
+        customer: session.customer_details.name,
+        amount: `${session.amount_total} ${session.currency.toUpperCase()}`,
+        status: session.status,
+    };
+
+    res.json({sessionInfo})
 });
 
 app.listen(port, () => {
