@@ -56,7 +56,7 @@ app.post("/create-checkout-session", async (req, res) => {
                     },
                 ],
                 mode: "payment",
-                success_url: `${process.env.CURRENT_DOMAIN}/checkout/success=true`,
+                success_url: `${process.env.CURRENT_DOMAIN}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
                 cancel_url: `${process.env.CURRENT_DOMAIN}/checkout/canceled=true`,
             });
 
@@ -72,6 +72,13 @@ app.post("/create-checkout-session", async (req, res) => {
         res.sendStatus(500);
     }
 });
+
+app.get('/checkout/success', async (req, res) => {
+    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+    const customer = await stripe.customers.retrieve(session.customer);
+  
+    res.send(`<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`);
+  });
 
 app.listen(port, () => {
     console.log(`App is now running on port ${port} `);
