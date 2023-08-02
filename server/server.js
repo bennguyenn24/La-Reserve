@@ -56,8 +56,8 @@ app.post("/create-checkout-session", async (req, res) => {
                     },
                 ],
                 mode: "payment",
-                success_url: `${process.env.CURRENT_DOMAIN}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${process.env.CURRENT_DOMAIN}/checkout/canceled=true`,
+                success_url: `${process.env.CURRENT_DOMAIN}/order/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${process.env.CURRENT_DOMAIN}/order/canceled=true`,
             });
 
             res.json({ session });
@@ -73,7 +73,7 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-app.get('/checkout/success', async (req, res) => {
+app.get('/order/success', async (req, res) => {
     const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
     const customer = await stripe.customers.retrieve(session.customer);
   
