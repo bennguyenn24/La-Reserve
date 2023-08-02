@@ -26,7 +26,7 @@ const router = createBrowserRouter([
                 element: <HotelDetails />,
             },
             {
-                path: "success/:bookingId",
+                path: "/checkout/success",
                 element: <CheckoutSuccess />,
             },
             {
