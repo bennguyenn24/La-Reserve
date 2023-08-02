@@ -6,7 +6,6 @@ import { HotelsContext } from "../../context/HotelsContext";
 
 export default function HotelDetails() {
     const hotels = useContext(HotelsContext);
-    console.log(hotels);
 
     const [bookDate, setBookDate] = useState("");
     const [leaveDate, setLeaveDate] = useState("");
