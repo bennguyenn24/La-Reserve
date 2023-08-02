@@ -4,7 +4,11 @@ const app = express();
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const whitelist = ["https://la-reserve.vercel.app", "http://localhost:5173"];
+const whitelist = [
+    "https://la-reserve.vercel.app",
+    "http://localhost:5173",
+    "https://la-reserve-server.onrender.com",
+];
 const corsOptions = {
     origin: function (origin, callback) {
         if (whitelist.indexOf(origin) !== -1) {
@@ -73,12 +77,18 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-app.get('/order/success', async (req, res) => {
-    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+app.get("/order/success", async (req, res) => {
+    console.log("hit");
+    console.log(req.query.session_id);
+    const session = await stripe.checkout.sessions.retrieve(
+        req.query.session_id
+    );
     const customer = await stripe.customers.retrieve(session.customer);
-  
-    res.send(`<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`);
-  });
+
+    res.send(
+        `<html><body><h1>Thanks for your order, ${customer.name}!</h1></body></html>`
+    );
+});
 
 app.listen(port, () => {
     console.log(`App is now running on port ${port} `);
